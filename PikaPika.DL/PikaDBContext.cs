@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Relational;
 using PikaPika.Models;
 using System;
 using System.Diagnostics.CodeAnalysis;
@@ -8,6 +7,7 @@ namespace PikaPika.DL
 {
     public class PikaDBContext : DbContext
     {
+        //Data Source = DESKTOP - ETJJ2O4; Initial Catalog = Pika; Persist Security Info=True;User ID = Pika; Password=123456789
         public DbSet<User> Users { get; set; } 
         public PikaDBContext([NotNull] DbContextOptions options) : base(options)
         {
