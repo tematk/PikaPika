@@ -15,6 +15,7 @@ namespace PikaPika
 {
     public class Startup
     {
+        //
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -32,6 +33,8 @@ namespace PikaPika
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            //services.AddDbContext();
 
             services.AddSwaggerGen(c =>
             {
@@ -56,12 +59,12 @@ namespace PikaPika
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-                c.RoutePrefix = string.Empty;
-            });
+            //app.UseSwagger();
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            //    c.RoutePrefix = string.Empty;
+            //});
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
